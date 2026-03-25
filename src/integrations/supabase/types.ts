@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      guest_responses: {
+        Row: {
+          adresse_code_postal: string | null
+          adresse_pays: string | null
+          adresse_rue: string | null
+          adresse_ville: string | null
+          age: number | null
+          created_at: string
+          email: string
+          frequence_entrainement: string | null
+          id: string
+          motivation: string | null
+          niveau_sportif: string | null
+          objectif_fitness: string | null
+          pseudo: string
+          sexe: string | null
+          style_anime: string | null
+          telephone: string | null
+        }
+        Insert: {
+          adresse_code_postal?: string | null
+          adresse_pays?: string | null
+          adresse_rue?: string | null
+          adresse_ville?: string | null
+          age?: number | null
+          created_at?: string
+          email: string
+          frequence_entrainement?: string | null
+          id?: string
+          motivation?: string | null
+          niveau_sportif?: string | null
+          objectif_fitness?: string | null
+          pseudo: string
+          sexe?: string | null
+          style_anime?: string | null
+          telephone?: string | null
+        }
+        Update: {
+          adresse_code_postal?: string | null
+          adresse_pays?: string | null
+          adresse_rue?: string | null
+          adresse_ville?: string | null
+          age?: number | null
+          created_at?: string
+          email?: string
+          frequence_entrainement?: string | null
+          id?: string
+          motivation?: string | null
+          niveau_sportif?: string | null
+          objectif_fitness?: string | null
+          pseudo?: string
+          sexe?: string | null
+          style_anime?: string | null
+          telephone?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
