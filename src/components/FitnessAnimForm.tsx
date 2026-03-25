@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import logo from "@/assets/logo2026.png";
 import { ChevronLeft, ChevronRight, Send, Zap, Swords, Dumbbell, Timer, MapPin } from "lucide-react";
