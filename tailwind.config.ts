@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Anton', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +50,10 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        glow: {
+          purple: "hsl(var(--glow-purple))",
+          green: "hsl(var(--glow-green))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
