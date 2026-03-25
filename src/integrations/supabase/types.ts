@@ -20,54 +20,78 @@ export type Database = {
           adresse_pays: string | null
           adresse_rue: string | null
           adresse_ville: string | null
-          age: number | null
+          age: string | null
+          ambiance_visuelle: string | null
+          avatar_motivation: string | null
           created_at: string
+          creation_defis: string | null
           email: string
           frequence_entrainement: string | null
           id: string
+          leaderboard: string | null
           motivation: string | null
           niveau_sportif: string | null
           objectif_fitness: string | null
-          pseudo: string
+          personnalisation_avatar: string | null
+          presentation_seances: string | null
+          pseudo: string | null
+          recompense_preferee: string | null
           sexe: string | null
           style_anime: string | null
           telephone: string | null
+          visualisation_stats: string | null
         }
         Insert: {
           adresse_code_postal?: string | null
           adresse_pays?: string | null
           adresse_rue?: string | null
           adresse_ville?: string | null
-          age?: number | null
+          age?: string | null
+          ambiance_visuelle?: string | null
+          avatar_motivation?: string | null
           created_at?: string
+          creation_defis?: string | null
           email: string
           frequence_entrainement?: string | null
           id?: string
+          leaderboard?: string | null
           motivation?: string | null
           niveau_sportif?: string | null
           objectif_fitness?: string | null
-          pseudo: string
+          personnalisation_avatar?: string | null
+          presentation_seances?: string | null
+          pseudo?: string | null
+          recompense_preferee?: string | null
           sexe?: string | null
           style_anime?: string | null
           telephone?: string | null
+          visualisation_stats?: string | null
         }
         Update: {
           adresse_code_postal?: string | null
           adresse_pays?: string | null
           adresse_rue?: string | null
           adresse_ville?: string | null
-          age?: number | null
+          age?: string | null
+          ambiance_visuelle?: string | null
+          avatar_motivation?: string | null
           created_at?: string
+          creation_defis?: string | null
           email?: string
           frequence_entrainement?: string | null
           id?: string
+          leaderboard?: string | null
           motivation?: string | null
           niveau_sportif?: string | null
           objectif_fitness?: string | null
-          pseudo?: string
+          personnalisation_avatar?: string | null
+          presentation_seances?: string | null
+          pseudo?: string | null
+          recompense_preferee?: string | null
           sexe?: string | null
           style_anime?: string | null
           telephone?: string | null
+          visualisation_stats?: string | null
         }
         Relationships: []
       }
