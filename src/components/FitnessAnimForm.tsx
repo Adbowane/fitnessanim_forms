@@ -254,6 +254,7 @@ export default function FitnessAnimForm() {
   if (!emailEntered) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden">
+        <ThemeToggle />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
