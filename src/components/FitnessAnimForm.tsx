@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import logo from "@/assets/logo2026.png";
-import { ChevronLeft, ChevronRight, Send, Mail } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, Mail, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 interface FormData {
   email: string;
