@@ -172,12 +172,23 @@ const questions: AnyQuestion[] = [
 ];
 
 export default function FitnessAnimForm() {
+  const { isDark, toggle: toggleTheme } = useTheme();
   const [emailEntered, setEmailEntered] = useState(false);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState<FormData>(initialData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const totalSteps = questions.length;
+
+  const ThemeToggle = () => (
+    <button
+      onClick={toggleTheme}
+      className="fixed top-4 right-4 z-50 p-2.5 rounded-xl glass-surface hover:scale-110 transition-transform"
+      aria-label="Basculer le thème"
+    >
+      {isDark ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-primary" />}
+    </button>
+  );
 
   const currentQ = questions[step];
 
