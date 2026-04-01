@@ -6,6 +6,42 @@
 
 @layer base {
   :root {
+    --background: 0 0% 98%;
+    --foreground: 250 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 25% 15%;
+
+    --primary: 270 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 70% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 15% 92%;
+    --muted-foreground: 250 10% 45%;
+
+    --accent: 270 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 15% 85%;
+    --input: 250 10% 91%;
+    --ring: 270 80% 55%;
+
+    --radius: 0.75rem;
+
+    --glow-purple: 270 80% 55%;
+    --glow-green: 150 70% 40%;
+    --surface-glass: 250 10% 95%;
+  }
+
+  .dark {
     --background: 250 30% 8%;
     --foreground: 270 20% 92%;
 
@@ -36,10 +72,8 @@
 
     --radius: 0.75rem;
 
-    /* Custom FitnessAnim tokens */
     --glow-purple: 270 80% 60%;
     --glow-green: 150 70% 45%;
-    --neon-purple: 0 0% 0% / 0 270deg 80% 60%;
     --surface-glass: 250 25% 14%;
   }
 }
@@ -80,8 +114,8 @@
     text-shadow: 0 0 20px hsl(150 70% 45% / 0.6), 0 0 40px hsl(150 70% 45% / 0.3);
   }
   .glass-surface {
-    background: hsl(250 25% 14% / 0.8);
+    background: hsl(var(--surface-glass) / 0.8);
     backdrop-filter: blur(16px);
-    border: 1px solid hsl(270 30% 25% / 0.5);
+    border: 1px solid hsl(var(--border) / 0.5);
   }
 }

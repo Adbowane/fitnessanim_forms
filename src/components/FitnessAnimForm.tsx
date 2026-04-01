@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import logo from "@/assets/logo2026.png";
-import { ChevronLeft, ChevronRight, Send, Mail } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, Mail, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 interface FormData {
   email: string;
@@ -171,12 +172,23 @@ const questions: AnyQuestion[] = [
 ];
 
 export default function FitnessAnimForm() {
+  const { isDark, toggle: toggleTheme } = useTheme();
   const [emailEntered, setEmailEntered] = useState(false);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState<FormData>(initialData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const totalSteps = questions.length;
+
+  const ThemeToggle = () => (
+    <button
+      onClick={toggleTheme}
+      className="fixed top-4 right-4 z-50 p-2.5 rounded-xl glass-surface hover:scale-110 transition-transform"
+      aria-label="Basculer le thème"
+    >
+      {isDark ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-primary" />}
+    </button>
+  );
 
   const currentQ = questions[step];
 
@@ -242,6 +254,7 @@ export default function FitnessAnimForm() {
   if (!emailEntered) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden">
+        <ThemeToggle />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -294,6 +307,7 @@ export default function FitnessAnimForm() {
   if (isComplete) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <ThemeToggle />
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -318,8 +332,9 @@ export default function FitnessAnimForm() {
   }
 
   // ── Main Form ──
-  return (
+    return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      <ThemeToggle />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[100px] pointer-events-none" />
 
