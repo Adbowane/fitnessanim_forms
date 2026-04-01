@@ -114,8 +114,8 @@
     text-shadow: 0 0 20px hsl(150 70% 45% / 0.6), 0 0 40px hsl(150 70% 45% / 0.3);
   }
   .glass-surface {
-    background: hsl(250 25% 14% / 0.8);
+    background: hsl(var(--surface-glass) / 0.8);
     backdrop-filter: blur(16px);
-    border: 1px solid hsl(270 30% 25% / 0.5);
+    border: 1px solid hsl(var(--border) / 0.5);
   }
 }
