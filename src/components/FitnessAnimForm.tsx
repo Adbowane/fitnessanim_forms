@@ -41,7 +41,7 @@ type QuestionConfig = {
   key: keyof Omit<FormData, "email" | "personnalisation_avatar">;
   label: string;
   subtitle: string;
-  options: { value: string; label: string }[];
+  options: { value: string; label: string; image?: string }[];
 };
 
 type MultiQuestionConfig = {
@@ -49,7 +49,7 @@ type MultiQuestionConfig = {
   label: string;
   subtitle: string;
   maxSelect: number;
-  options: { value: string; label: string }[];
+  options: { value: string; label: string; image?: string }[];
 };
 
 type AnyQuestion = (QuestionConfig | MultiQuestionConfig) & { multi?: boolean };
@@ -60,10 +60,10 @@ const questions: AnyQuestion[] = [
     label: "Quel est votre âge ?",
     subtitle: "Section 1 — Profil Sportif",
     options: [
-      { value: "moins_18", label: "Moins de 18 ans" },
-      { value: "18_24", label: "18 - 24 ans" },
-      { value: "25_34", label: "25 - 34 ans" },
-      { value: "35_plus", label: "35 ans et plus" },
+      { value: "moins_18", label: "Moins de 18 ans", image: "/fitnessAnime/question 1/-18.jpg" },
+      { value: "18_24", label: "18 - 24 ans", image: "/fitnessAnime/question 1/18-24.jpg" },
+      { value: "25_34", label: "25 - 34 ans", image: "/fitnessAnime/question 1/25-34.jpg" },
+      { value: "35_plus", label: "35 ans et plus", image: "/fitnessAnime/question 1/35et+.jpg" },
     ],
   },
   {
@@ -71,9 +71,9 @@ const questions: AnyQuestion[] = [
     label: "Comment décririez-vous votre niveau de fitness actuel ?",
     subtitle: "Section 1 — Profil Sportif",
     options: [
-      { value: "debutant", label: "Débutant (Je commence ou reprends doucement)" },
-      { value: "intermediaire", label: "Intermédiaire (Je m'entraîne occasionnellement)" },
-      { value: "avance", label: "Avancé (Je m'entraîne très régulièrement)" },
+      { value: "debutant", label: "Débutant (Je commence ou reprends doucement)", image: "/fitnessAnime/question 2/débutant.jpg" },
+      { value: "intermediaire", label: "Intermédiaire (Je m'entraîne occasionnellement)", image: "/fitnessAnime/question 2/intermédiaire.jpg" },
+      { value: "avance", label: "Avancé (Je m'entraîne très régulièrement)", image: "/fitnessAnime/question 2/avancé.jpg" },
     ],
   },
   {
@@ -81,10 +81,10 @@ const questions: AnyQuestion[] = [
     label: "Quel est votre objectif physique principal ?",
     subtitle: "Section 2 — Objectifs",
     options: [
-      { value: "masse", label: "Prise de masse / Force" },
-      { value: "perte_poids", label: "Perte de poids / Sèche" },
-      { value: "endurance", label: "Endurance / Cardio" },
-      { value: "maintien", label: "Maintien / Santé générale" },
+      { value: "masse", label: "Prise de masse / Force", image: "/fitnessAnime/question3/masse_force.png" },
+      { value: "perte_poids", label: "Perte de poids / Sèche", image: "/fitnessAnime/question3/sèche.jpg" },
+      { value: "endurance", label: "Endurance / Cardio", image: "/fitnessAnime/question3/endurance_cardio.jpg" },
+      { value: "maintien", label: "Maintien / Santé générale", image: "/fitnessAnime/question3/méditation.jpg" },
     ],
   },
   {
@@ -92,9 +92,9 @@ const questions: AnyQuestion[] = [
     label: "L'idée de faire évoluer un Avatar 3D virtuel grâce à vos vraies séances de sport vous motive-t-elle ?",
     subtitle: "Section 3 — L'Expérience Fitness Anim",
     options: [
-      { value: "oui", label: "Oui, carrément ! C'est exactement ce qu'il me faut." },
-      { value: "pourquoi_pas", label: "Pourquoi pas, à tester." },
-      { value: "non", label: "Non, je préfère séparer le sport et les jeux." },
+      { value: "oui", label: "Oui, carrément ! C'est exactement ce qu'il me faut.", image: "/fitnessAnime/question4/carrément.jpg" },
+      { value: "pourquoi_pas", label: "Pourquoi pas, à tester.", image: "/fitnessAnime/question4/mouai.jpg" },
+      { value: "non", label: "Non, je préfère séparer le sport et les jeux.", image: "/fitnessAnime/question4/non.jpg" },
     ],
   },
   {
@@ -102,8 +102,8 @@ const questions: AnyQuestion[] = [
     label: "Comment préférez-vous que vos séances soient présentées ?",
     subtitle: "Section 3 — L'Expérience Fitness Anim",
     options: [
-      { value: "missions", label: 'Comme des "Missions" allant du Rang D (Facile) au Rang S (Extrême) avec des sceaux à débloquer.' },
-      { value: "classique", label: "Comme des séances de sport classiques (Débutant, Intermédiaire, etc.)." },
+      { value: "missions", label: 'Comme des "Missions" allant du Rang D (Facile) au Rang S (Extrême) avec des sceaux à débloquer.', image: "/fitnessAnime/question 5/Mission.jpg" },
+      { value: "classique", label: "Comme des séances de sport classiques (Débutant, Intermédiaire, etc.).", image: "/fitnessAnime/question 5/séances.jpg" },
     ],
   },
   {
@@ -111,9 +111,9 @@ const questions: AnyQuestion[] = [
     label: "À la fin d'une séance (Fin de Mission), quelle récompense vous donne le plus de satisfaction ?",
     subtitle: "Section 3 — L'Expérience Fitness Anim",
     options: [
-      { value: "xp", label: "Voir ma jauge d'XP se remplir et passer au niveau supérieur." },
-      { value: "or_gemmes", label: "Gagner de l'Or/Gemmes pour acheter des équipements." },
-      { value: "badges", label: "Obtenir des Badges de réussite." },
+      { value: "xp", label: "Voir ma jauge d'XP se remplir et passer au niveau supérieur.", image: "/fitnessAnime/question 6/exp.jpg" },
+      { value: "or_gemmes", label: "Gagner de l'Or/Gemmes pour acheter des équipements.", image: "/fitnessAnime/question 6/or.jpg" },
+      { value: "badges", label: "Obtenir des Badges de réussite.", image: "/fitnessAnime/question 6/badge.jpg" },
     ],
   },
   {
@@ -123,10 +123,10 @@ const questions: AnyQuestion[] = [
     maxSelect: 2,
     multi: true,
     options: [
-      { value: "vetements", label: "Les vêtements et armures." },
-      { value: "effets", label: "Les effets visuels (ex: une Aura lumineuse qui l'entoure)." },
-      { value: "ressemblance", label: "La ressemblance physique avec moi." },
-      { value: "evolution", label: "Qu'il devienne visiblement plus musclé/fit au fil de mes entraînements réels." },
+      { value: "vetements", label: "Les vêtements et armures.", image: "/fitnessAnime/question 7/armur.jpg" },
+      { value: "effets", label: "Les effets visuels (ex: une Aura lumineuse qui l'entoure).", image: "/fitnessAnime/question 7/aura.jpg" },
+      { value: "ressemblance", label: "La ressemblance physique avec moi.", image: "/fitnessAnime/question 7/visuel.jpg" },
+      { value: "evolution", label: "Qu'il devienne visiblement plus musclé/fit au fil de mes entraînements réels.", image: "/fitnessAnime/question 7/+musclé.jpg" },
     ],
   },
   {
@@ -144,7 +144,7 @@ const questions: AnyQuestion[] = [
     label: "Quelle ambiance visuelle vous attire le plus pour cette application ?",
     subtitle: "Section 5 — Interface & Communauté",
     options: [
-      { value: "sombre", label: "Mode Sombre (Gamer/Cyberpunk) avec des lignes lumineuses Néon (Violet et Vert)." },
+      { value: "sombre", label: "Mode Sombre (Gamer/Cyberpunk) avec des lignes lumineuses Néon (Violet et Vert).", image: "/fitnessAnime/questio 9/cyberpunk.jpg" },
       { value: "clair", label: "Mode Clair, épuré et minimaliste." },
       { value: "choix", label: "Je veux pouvoir choisir entre les deux." },
     ],
@@ -154,9 +154,9 @@ const questions: AnyQuestion[] = [
     label: 'Êtes-vous intéressé(e) par un classement "Top Héros" (Leaderboard) ?',
     subtitle: "Section 5 — Interface & Communauté",
     options: [
-      { value: "oui_mondial", label: "Oui, j'adore la compétition mondiale !" },
+      { value: "oui_mondial", label: "Oui, j'adore la compétition mondiale !", image: "/fitnessAnime/question 10/compétition.jpg" },
       { value: "oui_amis", label: "Oui, mais uniquement avec ma liste d'amis." },
-      { value: "non", label: "Non, je joue et m'entraîne uniquement en solo." },
+      { value: "non", label: "Non, je joue et m'entraîne uniquement en solo.", image: "/fitnessAnime/question 10/solo.jpg" },
     ],
   },
   {
@@ -383,12 +383,13 @@ export default function FitnessAnimForm() {
               {currentQ.label}
             </h2>
 
-            <div className="grid gap-3">
+            <div className={`grid gap-3 ${currentQ.options.some((o: any) => o.image) ? 'grid-cols-1 sm:grid-cols-2' : ''}`}>
               {currentQ.options.map((opt) => {
                 const isMulti = !!(currentQ as any).multi;
                 const isSelected = isMulti
                   ? formData.personnalisation_avatar.includes(opt.value)
                   : formData[currentQ.key as keyof FormData] === opt.value;
+                const hasImage = !!(opt as any).image;
 
                 return (
                   <button
@@ -398,20 +399,34 @@ export default function FitnessAnimForm() {
                         ? handleMultiToggle(opt.value)
                         : handleChange(currentQ.key as keyof FormData, opt.value)
                     }
-                    className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all font-body text-sm font-semibold flex items-center gap-3 ${
+                    className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all font-body text-sm font-semibold flex items-center gap-3 relative overflow-hidden group ${
                       isSelected
-                        ? "border-primary bg-primary/15 text-foreground glow-purple"
+                        ? "border-primary bg-primary/20 text-foreground glow-purple"
                         : "border-border bg-muted/30 text-muted-foreground hover:border-primary/50 hover:bg-muted/50"
-                    }`}
+                    } ${hasImage ? "min-h-[140px] items-end pb-4" : ""}`}
                   >
-                    <span
-                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
-                        isSelected ? "border-primary bg-primary" : "border-muted-foreground"
-                      }`}
-                    >
-                      {isSelected && <span className="w-2 h-2 rounded-full bg-primary-foreground" />}
-                    </span>
-                    {opt.label}
+                    {hasImage && (
+                      <>
+                        <div 
+                          className={`absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 ${isSelected ? "opacity-50" : "opacity-30 group-hover:opacity-40"}`}
+                          style={{ backgroundImage: `url('${encodeURI((opt as any).image)}')` }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+                      </>
+                    )}
+                    
+                    <div className="relative z-10 flex items-center gap-3 w-full">
+                      <span
+                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
+                          isSelected ? "border-primary bg-primary" : "border-muted-foreground"
+                        }`}
+                      >
+                        {isSelected && <span className="w-2 h-2 rounded-full bg-primary-foreground" />}
+                      </span>
+                      <span className={`${hasImage ? "text-foreground drop-shadow-md text-base" : ""}`}>
+                        {opt.label}
+                      </span>
+                    </div>
                   </button>
                 );
               })}
